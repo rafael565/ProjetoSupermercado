@@ -1,0 +1,50 @@
+﻿@model ProjetoSupermercado.Models.Cargo
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Detalhes do Cargo</h1>
+    <div>
+        <h4>Cargo</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.descricao)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.descricao)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.salario)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.salario)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.quantidade)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.quantidade)
+            </dd>
+        </dl>
+    </div>
+    <div class="text-center">
+        <a asp-action="Edit" asp-route-id="@Model?.id" class="btn btn-warning">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

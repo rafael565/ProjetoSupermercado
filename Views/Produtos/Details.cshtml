@@ -1,0 +1,40 @@
+﻿@model ProjetoSupermercado.Models.Produto
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Detalhes do Produto</h1>
+
+    <div>
+        <h4>Produto</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.validade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.validade)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.quantidade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.quantidade)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="d-flex justify-content-center mt-3">
+        <a asp-action="Edit" asp-route-id="@Model?.id" class="btn btn-primary mx-2">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary mx-2">Voltar para a Lista</a>
+    </div>
+</div>

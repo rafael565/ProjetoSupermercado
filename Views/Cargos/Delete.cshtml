@@ -1,0 +1,56 @@
+﻿@model ProjetoSupermercado.Models.Cargo
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Excluir Cargo</h1>
+    <h4 class="text-center">Tem certeza que deseja excluir este cargo?</h4>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.nome)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.nome)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.descricao)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.descricao)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.salario)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.salario)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.quantidade)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.quantidade)
+                </dd>
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="id" />
+                <div class="text-center">
+                    <input type="submit" value="Excluir" class="btn btn-danger" />
+                    <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

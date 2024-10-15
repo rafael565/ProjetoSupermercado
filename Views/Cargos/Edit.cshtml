@@ -1,0 +1,58 @@
+﻿@model ProjetoSupermercado.Models.Cargo
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Editar Cargo</h1>
+    <h4 class="text-center">Atualize as informações do cargo abaixo:</h4>
+    <hr />
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="id" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="nome" class="form-label"></label>
+                    <input asp-for="nome" class="form-control" placeholder="Nome do Cargo" />
+                    <span asp-validation-for="nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="descricao" class="form-label"></label>
+                    <input asp-for="descricao" class="form-control" placeholder="Descrição do Cargo" />
+                    <span asp-validation-for="descricao" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="salario" class="form-label"></label>
+                    <input asp-for="salario" class="form-control" placeholder="Salário" type="number" step="0.01" />
+                    <span asp-validation-for="salario" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="quantidade" class="form-label"></label>
+                    <input asp-for="quantidade" class="form-control" placeholder="Quantidade" type="number" />
+                    <span asp-validation-for="quantidade" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <input type="submit" value="Salvar" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

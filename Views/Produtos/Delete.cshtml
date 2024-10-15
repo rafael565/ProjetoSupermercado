@@ -1,0 +1,44 @@
+﻿@model ProjetoSupermercado.Models.Produto
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Deletar Produto</h1>
+
+    <h3 class="text-center">Você tem certeza que deseja deletar este produto?</h3>
+    <div>
+        <h4>Produto</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.validade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.validade)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.quantidade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.quantidade)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete" class="mt-3">
+            <input type="hidden" asp-for="id" />
+            <div class="d-flex justify-content-center">
+                <input type="submit" value="Deletar" class="btn btn-danger mx-2" />
+                <a asp-action="Index" class="btn btn-secondary mx-2">Voltar para a Lista</a>
+            </div>
+        </form>
+    </div>
+</div>

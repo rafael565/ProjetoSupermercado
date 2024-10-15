@@ -1,0 +1,43 @@
+﻿@model ProjetoSupermercado.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Excluir Funcionário</h1>
+    <h3>Tem certeza de que deseja excluir este registro?</h3>
+    <div>
+        <h4>Funcionário</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.cpf)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.cpf)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.cargo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.cargo.nome)
+            </dd>
+        </dl>
+    </div>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <div class="text-center mt-3">
+            <input type="submit" value="Excluir" class="btn btn-danger btn-lg" />
+            <a asp-action="Index" class="btn btn-secondary btn-lg">Voltar para a Lista</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,56 @@
+﻿@model ProjetoSupermercado.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Excluir Fornecedor</h1>
+    <h3 class="text-center">Tem certeza que deseja excluir este fornecedor?</h3>
+    <hr />
+    <div>
+        <h4>Fornecedor</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.cnpj)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.cnpj)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.produto)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.produto.nome)
+            </dd>
+          
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.validade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.validade)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.quantidade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.quantidade)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="id" />
+            <div class="text-center">
+                <input type="submit" value="Excluir" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
